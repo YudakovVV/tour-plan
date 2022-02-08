@@ -95,11 +95,11 @@
         <div class="hotel-info__text">
           <div class="hotel-wrapper">
             <div class="stars">
-              <img src="img/star.svg" alt="star">
-              <img src="img/star.svg" alt="star">
-              <img src="img/star.svg" alt="star">
-              <img src="img/star.svg" alt="star">
-              <img src="img/star.svg" alt="star">
+              <img class= "stars-images" src="img/star.svg" alt="star">
+              <img class= "stars-images" src="img/star.svg" alt="star">
+              <img class= "stars-images" src="img/star.svg" alt="star">
+              <img class= "stars-images" src="img/star.svg" alt="star">
+              <img class= "stars-images" src="img/star.svg" alt="star">
             </div>
             <h1 class="hotel-name hotel-info__name">GRAND HILTON HOTEL</h1>
             <span class="offer hotel-info__offer">Flash Offer</span>
@@ -165,9 +165,7 @@
             <button class="button booking__button">View Other Options</button>
           </div>
           <!-- /.booking -->
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63280.07490209258!2d79.76858607910155!3d7.574467000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2c96110de8289%3A0x3fd7668bc2d85eb9!2sGrand%20Hilton%20Hotel!5e0!3m2!1sru!2sru!4v1644239108903!5m2!1sru!2sru" width="347" height="213" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+          <div class="map" id="map"></div>
           <!-- /.map -->
         </div>
         <!-- /.hotel-right -->
@@ -177,6 +175,47 @@
     <!-- /.container -->
   </section>
   <!-- /.hotel -->
+  <section class="newsletter">
+    <div class="newsletter-wrapper">
+      <h2 class="newsletter-title newsletter__title">
+        subscribe to our
+        <span class="newsletter-title__strong">Newsletter</span>
+      </h2>
+      <form action="#" class="subscribe newsletter__subscribe">
+        <input type="text" class="subscribe__input" placeholder="Your email address">
+        <button class="subscribe__button">Send</button>
+      </form>
+    </div>
+    <!-- /.newsletter-wrapper -->
+  </section>
+  <!-- /.newsletter -->  
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=54567bd7-2cab-41db-9bbc-ea885eac7643&lang=ru_RU"></script>
+  <script>
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+    function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [7.838188551112462,98.29882664369443],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+        myPieChart = new ymaps.Placemark([
+            7.838188551112462,98.29882664369443
+        ]);
+
+    myMap.geoObjects
+        .add(myPieChart)
+        .add(new ymaps.Placemark([7.838188551112462,98.29882664369443], {
+            balloonContent: '<a href="https://yandex.ru/maps/?from=api-maps&ll=98.300093%2C7.839023&mode=routes&rtext=~7.838184%2C98.298791&rtt=auto&ruri=~&utm_source=api-maps&z=16">Hilton Phuket Arcadia</a>'
+        }, {
+            preset: 'islands#dotIcon',
+            iconColor: 'red'
+        }));
+
+    }
+</script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>  
 </body>
