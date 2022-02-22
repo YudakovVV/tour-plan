@@ -1727,6 +1727,7 @@ template {
     bottom: 0;
     top: 78px;
     padding-top: 30px;
+    margin-top: -10px;
   }
   .navbar-bottom--visible {
     display: block;
