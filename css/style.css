@@ -966,6 +966,7 @@ template {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 70px;
+  margin-top: 0;
 }
 
 .reviews-slider__item {
@@ -1070,6 +1071,7 @@ template {
   line-height: 15px;
   color: #EC1F46;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .reviews-slider__date {
@@ -1372,6 +1374,13 @@ template {
   grid-column: span 4;
 }
 
+.footer__button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+}
+
 .footer__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1597,6 +1606,9 @@ template {
   .reviews__title {
     font-size: 30px;
     margin-bottom: 50px;
+  }
+  .newsletter {
+    padding: 92px 0 93px 0;
   }
   .activities-wrapper {
     -ms-flex-wrap: wrap;
@@ -1883,7 +1895,7 @@ template {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    grid-column: span 2;
+    grid-column: span 4;
   }
   .footer__menu {
     -ms-grid-row: 5;
@@ -1951,6 +1963,9 @@ template {
     margin: auto;
     margin-bottom: 42px;
   }
+  .reviews-slider__text {
+    text-align: left;
+  }
   .card {
     width: 100%;
   }
@@ -2010,6 +2025,8 @@ template {
   .footer__bottom {
     -ms-grid-row: 8;
     grid-row: 8;
+    -ms-grid-column: 1;
+    grid-column: 1;
   }
   .footer__menu {
     -ms-grid-row: 8;
@@ -2023,6 +2040,9 @@ template {
     -ms-grid-column: 1;
     grid-column: 1;
     margin-top: 10px;
+  }
+  .modal__dialog {
+    padding: 33px 70px;
   }
 }
 /*# sourceMappingURL=style.css.map */
