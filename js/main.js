@@ -38,7 +38,7 @@ $(document).ready(function () {
   modalButton.on("click", openModal);
   closeModalButton.on("click", closeModal);
 
-  function openModal(){
+  function openModal(){    
     var targetModal = $(this).attr("data-href");
     /*var modalOverlay  = $(".modal__overlay");
     var modalDialog  = $(".modal__dialog");*/
@@ -59,7 +59,27 @@ $(document).ready(function () {
       }
       });
   }
-  
+  //Обработка формы
+  $(".form").each(function(){
+    $(this).validate({
+      errorClass: "invalid",
+      messages: {
+        name: {
+          required: "Enter your name",
+          minlength: "Name must be at least 2 letters"
+        },
+        email: {
+          required: "We need your email address to contact you",
+          email: "Your email address must be in the format of name@domain.com"
+        },
+        phone: {
+          required: "Enter phone number",
+        },
+      },
+    });
+  })
+  $('.phone').mask('+7(000) 000-00-00');
+  AOS.init();
 });
 $('.parallax-window').parallax({imageSrc: 'img/newsletter-bg.jpg'});
 
