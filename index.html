@@ -364,15 +364,27 @@
               <div class="footer__icon-wrapper">
                 <img class = "footer__icon" src="img/phone-call-footer.svg" alt="icon: phone">
               </div>
-              Tel (business hours) : 269 1500 <br>
+              <div class="footer__info">
+                <div class="footer__call-center">
+                 Tel (business hours): &nbsp; <a href="tel:269 1500" class="footer__number">269 1500</a>
+                </div>
+                <div class="footer__call-center">
+                  Tel (hotline) Monday - Saturday: &nbsp; <a href="tel:52-56-61-38" class="footer__number">52-56-61-38</a> (08:00 am – 20:00 pm) 
+                </div>
+                <div class="footer__call-center">
+                  Tel (hotline) Sunday: &nbsp; <a href="tel:52-56-61-38" class="footer__number">52-56-61-38</a>(08:00 am – 14:00 pm)
+                </div>
+              </div> 
+             <!-- Tel (business hours) : 269 1500 <br>
                 Tel (hotline) Monday - Saturday: 52-56-61-38 (08:00 am – 20:00 pm)<br>
-                Tel (hotline) Sunday: 52-56-61-38 (08:00 am – 14:00 pm)
+                Tel (hotline) Sunday: 52-56-61-38 (08:00 am – 14:00 pm)-->
+                  
             </li>
             <li class="footer__item footer__item--mb-2">
               <div class="footer__icon-wrapper">
                 <img class = "footer__icon" src="img/email.svg" alt="icon: email">
               </div>
-              cherly.lawson@example.com
+              <a href="mailto:cherly.lawson@example.com" class="footer__number">cherly.lawson@example.com</a>              
             </li>
           </ul>
         </div>
@@ -381,10 +393,10 @@
           <h3 class="footer__title">Send us a message</h3>
           <form action="send.php" method="POST" class="footer__form form">
             <div class="footer__input-group">
-              <input type="text" class="input footer__input" placeholder="Your Full Name*" name="name" required>
+              <input type="text" class="input footer__input" placeholder="Your Full Name*" name="name" required minlength="2">
             </div>
             <div class="footer__input-group">
-              <input type="tel" class="input footer__input phone" placeholder="Phone Number*" name="phone" required>
+              <input type="tel" class="input footer__input phone" placeholder="Phone Number*" name="phone" required minlength="10">
             </div>
            <!-- <textarea cols="30" rows="10" class="message footer__message" placeholder="Message" name="message"></textarea>-->
             <textarea class="message footer__message" placeholder="Message" name="message"></textarea>
@@ -421,7 +433,7 @@
       <h3 class="modal__title">Booking</h3>
       <form action="send.php" method="POST" class="modal__form form">
         <input type="text" class="input modal__input" placeholder="Your Full Name*" name="name" required minlength="2">
-        <input type="tel" class="input modal__input phone" placeholder="Phone Number*" name="phone" required>
+        <input type="tel" class="input modal__input phone" placeholder="Phone Number*" name="phone" required minlength="10">
         <input type="email" class="input modal__input" placeholder="Your email*" name="email" required>
         <textarea class="message modal__message" placeholder="Message" name="message"></textarea>
         <button class="button modal__button" type="submit">Send</button>
